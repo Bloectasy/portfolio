@@ -16,7 +16,7 @@ export default function Projects() {
           title: "Personal Website",
           description: "Developed a personal website as a digital portfolio which is offering a glimpse into my achievements and interests. It's a space where i share my work and experience with the world.",
           category: ["Web Development", "React", "Vite", "Node", "Typescript"],
-          url: "https://github.com/Bloectasy/Personal_Website",
+          url: "https://github.com/Bloectasy/portfolio",
         },
       ];
 
