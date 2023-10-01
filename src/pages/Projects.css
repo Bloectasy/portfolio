@@ -1,0 +1,7 @@
+#projects.container-text {
+    transition: all 0.3s ease;
+}
+
+#projects.container-text:hover {
+    transform: scale(1.02);
+}
