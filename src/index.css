@@ -10,6 +10,26 @@
   margin: 0;
 }
 
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #242d3d;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e374b;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #44516d;
+}
+
+
 html,
 body {
   font-family: var(--font-mono);
@@ -24,6 +44,7 @@ a {
   color: inherit;
 }
 
+/* Container Styles */
 .container {
   color: white;
   max-width: 76.8rem;
