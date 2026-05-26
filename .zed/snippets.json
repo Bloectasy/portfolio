@@ -1,0 +1,74 @@
+{
+  "Document Query shortcut": {
+    "body": "document.querySelector($0);",
+    "prefix": "dq"
+  },
+  "Get element by ID": {
+    "body": "document.getElementById($0);",
+    "prefix": "de"
+  },
+  "Import CSS Module": {
+    "body": "import styles from './${TM_FILENAME_BASE}.module.css'",
+    "prefix": "csm"
+  },
+  "Import SCSS Module": {
+    "body": "import styles from './${TM_FILENAME_BASE}.module.scss'",
+    "prefix": "ssm"
+  },
+  "Print to console": {
+    "body": "console.log($0)",
+    "prefix": "cl"
+  },
+  "React Functional Component": {
+    "body": [
+      "export default function ${1:Component}() {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ],
+    "prefix": "rfc"
+  },
+  "React Styled Component": {
+    "body": [
+      "import styled from 'styled-components'",
+      "",
+      "const Styled${1:Component} = styled.$0`",
+      "\t",
+      "`",
+      "",
+      "function ${1:Component}() {",
+      "\treturn (",
+      "\t\t<Styled${1:Component}>",
+      "\t\t\t${1:Component}",
+      "\t\t</Styled${1:Component}>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:Component}"
+    ],
+    "prefix": "rsc"
+  },
+  "Write className": {
+    "body": "className=\"$0\"",
+    "prefix": "cn"
+  },
+  "eslint-disable": {
+    "body": "// eslint-disable",
+    "prefix": "ed"
+  },
+  "eslint-disable-next-line": {
+    "body": "// eslint-disable-next-line",
+    "prefix": "edn"
+  },
+  "eslint-disable-next-line-with-rule": {
+    "body": "// eslint-disable-next-line $0",
+    "prefix": "ednr"
+  },
+  "eslint-disable-with-rule": {
+    "body": "// eslint-disable $0",
+    "prefix": "edr"
+  }
+}

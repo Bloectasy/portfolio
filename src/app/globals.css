@@ -1,26 +1,113 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .light {
+    --color-background: #fff5f0;
+    --color-primary: #c85830;
+    --color-text: #1a202c;
+    --color-shadow: var(--color-primary);
+    --background-gradient: radial-gradient(
+      circle at center,
+      rgba(200, 88, 48, 0.15) 0%,
+      rgba(239, 83, 28, 0.05) 50%,
+      transparent 100%
+    );
+  }
+  .dark {
+    --color-background: #1a202c;
+    --color-primary: #c85830;
+    --color-text: #ffffff;
+    --color-shadow: var(--color-text);
+    --background-gradient: radial-gradient(
+      circle at center,
+      rgba(200, 88, 48, 0.15) 0%,
+      rgba(239, 83, 28, 0.05) 50%,
+      transparent 100%
+    );
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::view-transition-old(root) {
+  animation-delay: 700ms;
+}
+
+::view-transition-new(root) {
+  animation: circle-in 700ms;
+}
+
+.shadow-center {
+  box-shadow: 0 0 20px color-mix(in srgb, var(--color-shadow) 25%, transparent);
+}
+
+.shadow-project-center {
+	box-shadow: 0 0 10px color-mix(in srgb, var(--color-primary) 50%, transparent)
+}
+
+.subtle-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-primary) 60%, transparent) transparent;
+}
+
+.subtle-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.subtle-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.subtle-scrollbar::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-primary) 60%, transparent);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.markdown-content pre {
+  background: color-mix(in srgb, var(--color-text) 5%, var(--color-background)) !important;
+}
+
+.markdown-content pre code {
+  background: transparent !important;
+  color: var(--color-text) !important;
+}
+
+.markdown-content .hljs {
+  background: transparent !important;
+}
+
+@theme {
+  --color-background: #fff5f0;
+  --color-primary: #c85830;
+  --color-text: #1a202c;
+  --background-gradient: radial-gradient(
+    circle at center,
+    rgba(200, 88, 48, 0.15) 0%,
+    rgba(239, 83, 28, 0.05) 50%,
+    transparent 100%
+  );
+
+  @keyframes circle-in {
+    from {
+      clip-path: circle(0% at 50% 50%);
+    }
+    to {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
+}
+
+@layer base {
+  body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    background-image: var(--background-gradient);
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
 }

@@ -1,0 +1,22 @@
+services:
+  bloectasy-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bloectasy-dev
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+      NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY}
+    networks:
+      proxy-net:
+        aliases:
+          - bloectasy-dev
+
+networks:
+  proxy-net:
+    external: true

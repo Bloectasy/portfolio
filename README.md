@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Rebuild
 
-## Getting Started
+A personal portfolio built with Next.js (App Router), TypeScript, and Tailwind CSS. The site lists selected GitHub repositories, shows per-project README pages, and includes a contact form.
 
-First, run the development server:
+## Features
+
+- Projects page showing selected GitHub repositories
+- Per-project pages rendering repository README (Markdown)
+- Client-side search and language filters for repositories
+- Loading skeletons for project cards
+- Contact form integrated with Web3Forms (configurable)
+
+## Tech stack
+
+- Next.js 16 (App Router)
+- React 19 + TypeScript
+- Tailwind CSS
+- react-markdown, remark-gfm, rehype-highlight for README rendering
+- react-icons
+- GSAP for animations
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 18+ (recommended)
+- npm, pnpm, or yarn
+
+### Install
+
+```bash
+git clone <repo-url>
+cd portfolio
+npm install
+```
+
+### Run (development)
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build & start (production)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+Create a `.env` file in the project root or set environment variables in your hosting platform.
 
-To learn more about Next.js, take a look at the following resources:
+Required / optional variables used by this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `GITHUB_TOKEN` — (optional, server-only) GitHub personal access token to increase API quota and avoid rate limits when fetching repository data. Keep this secret and do not prefix with `NEXT_PUBLIC_`.
+- `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` — (optional) public key used by the client-side contact form when submitting to Web3Forms. If you prefer not to expose keys to the browser, you can switch to a server-side proxy and use a server-only key instead.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project structure (high level)
 
-## Deploy on Vercel
+- `src/app/` — Next.js App Router routes and components
+  - `_components/` — shared React components (Navigation, Footer, ProjectCard, etc.)
+  - `_lib/` — helper libraries
+  - `projects/` — projects list and per-project pages
+  - `api/github/route.ts` — API route used for client-side GitHub requests
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Docker
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A `docker-compose.yaml` is included for local containerized runs. Example:
+
+```bash
+docker compose up --build
+```
+
+## Scripts
+
+- `dev` — start Next.js dev server
+- `build` — build for production
+- `start` — start the built app
+- `lint` — run ESLint
+
+## License
+
+No license specified. Add a `LICENSE` file if you want to open-source this repository under a specific license.
