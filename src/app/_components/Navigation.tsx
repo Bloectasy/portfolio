@@ -12,7 +12,7 @@ const Navigation = () => {
   const { toggleTheme, theme } = useTheme();
 
   return (
-    <nav className="relative mt-8 flex items-center justify-between">
+    <nav className="relative mt-6 flex items-center justify-center sm:mt-8 sm:justify-between">
       {/* Left Side */}
       <div className="text-primary hidden items-center justify-center gap-4 text-3xl md:flex">
         <Link
@@ -41,9 +41,12 @@ const Navigation = () => {
         </Link>
       </div>
       {/* Right Side*/}
-      <div className="flex items-center gap-4 md:gap-10">
+      <div className="relative flex w-full items-center justify-center gap-3 sm:w-auto sm:justify-between sm:gap-4 md:gap-10">
         <Paths />
-        <button className="cursor-pointer" onClick={() => toggleTheme()}>
+        <button
+          className="absolute right-0 cursor-pointer sm:static"
+          onClick={() => toggleTheme()}
+        >
           {theme === 'light' ? (
             <MdDarkMode className="text-2xl" />
           ) : (
@@ -60,7 +63,7 @@ const Paths = () => {
   const path = usePathname();
 
   return (
-    <div className="flex items-center justify-center gap-4 text-xl font-semibold">
+    <div className="flex flex-1 items-center justify-center gap-4 text-xl font-semibold sm:flex-none sm:gap-4 sm:text-xl">
       <Link
         className={`${path === '/' ? 'text-primary hover:text-primary/80' : 'hover:text-text/80'} transition-transform duration-300 hover:scale-105`}
         href="/"

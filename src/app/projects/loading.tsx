@@ -8,8 +8,8 @@ const Loading = () => {
     <div className="flex min-h-screen flex-col">
       <Navigation />
       <main className="flex-1">
-        <h1 className="my-12 text-center text-4xl font-semibold">Projects</h1>
-        <div className="flex h-11 w-full items-center justify-between gap-4">
+        <h1 className="my-12 text-center text-3xl font-semibold sm:text-4xl">Projects</h1>
+        <div className="flex w-full flex-col gap-3 sm:h-11 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div className="relative max-w-md flex-1">
             <input
               type="text"
@@ -22,7 +22,7 @@ const Loading = () => {
             <FaSearch className="text-primary pointer-events-none absolute top-1/2 right-4 -translate-y-1/2" />
           </div>
 
-          <div className="relative">
+          <div className="relative self-end sm:self-auto">
             <button
               type="button"
               className="text-primary cursor-pointer disabled:cursor-not-allowed disabled:opacity-60"

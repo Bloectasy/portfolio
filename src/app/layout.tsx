@@ -9,7 +9,7 @@ const RootLayout = ({
 }) => {
   return (
     <ThemeProvider>
-      <html lang="en" className="md:mx-52">
+      <html lang="en">
         <meta charSet="UTF-8" />
         <title>Home | Bloectasy</title>
         <ThemeBody>{children}</ThemeBody>

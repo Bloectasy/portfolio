@@ -22,10 +22,10 @@ const ContactInfo = () => {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center md:h-[80vh]">
+    <div className="flex min-h-[60vh] items-center justify-center py-10 sm:min-h-[70vh] sm:py-16">
       <form
         onSubmit={onSumbit}
-        className="grid w-full max-w-6xl gap-10 md:grid-cols-2"
+        className="grid w-full max-w-6xl gap-6 sm:gap-8 md:grid-cols-2 md:gap-10"
       >
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-2">

@@ -23,7 +23,7 @@ const ProjectCard = ({
   if (isLoading) {
     return (
       <div
-        className={`shadow-center flex w-full animate-pulse flex-col justify-center gap-6 rounded-2xl p-8 ${className ?? ''}`}
+        className={`shadow-center flex w-full animate-pulse flex-col justify-center gap-6 rounded-2xl p-6 sm:p-8 ${className ?? ''}`}
       >
         <div className="flex items-center justify-between">
           <div className="bg-primary/20 h-9 w-40 rounded-md" />
@@ -52,19 +52,19 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`shadow-center flex w-full flex-col justify-center gap-6 rounded-2xl p-8 ${className ?? ''}`}
+      className={`shadow-center flex w-full flex-col justify-center gap-6 rounded-2xl p-6 sm:p-8 ${className ?? ''}`}
     >
       <div className="text-primary flex items-center justify-between font-semibold">
-        <h1 className="text-3xl">{title}</h1>
+        <h1 className="text-2xl sm:text-3xl">{title}</h1>
         <Link href={`/projects/${title}`}>
           <FaExternalLinkAlt className="text-xl" />
         </Link>
       </div>
 
-      <h2 className="text-text/80 text-xl">{description}</h2>
+      <h2 className="text-text/80 text-lg sm:text-xl">{description}</h2>
 
       {technologiesIcons && (
-        <p className="text-primary flex gap-4">
+        <p className="text-primary flex gap-3 sm:gap-4">
           {technologiesIcons.map((technologyIcon) => (
             <span key={technologyIcon.name}>
               {createElement(technologyIcon, { size: 36 })}
@@ -74,7 +74,7 @@ const ProjectCard = ({
       )}
 
       {technologies && (
-        <div className="text-primary flex gap-6">
+        <div className="text-primary flex gap-4 sm:gap-6">
           {technologies.map((technology) => (
             <span
               className="shadow-project-center rounded-2xl px-3.5 py-1"

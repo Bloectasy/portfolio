@@ -4,7 +4,7 @@ import { SiNextdotjs, SiTypescript } from 'react-icons/si';
 
 const ProjectsShowcase = () => {
   return (
-    <div className="grid gap-12 px-6 md:grid-cols-2 md:px-0">
+    <div className="grid gap-8 sm:gap-12 md:grid-cols-2">
       <ProjectCard
         title="Valeriyya"
         description=""

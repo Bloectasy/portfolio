@@ -18,10 +18,10 @@ const ProjectPage = async ({
   return (
     <div className="flex min-h-screen flex-col">
       <Navigation />
-      <main className="flex-1 px-8 py-12">
+      <main className="flex-1 py-8 sm:py-12">
         <div className="mx-auto max-w-4xl">
-          <h1 className="text-primary mb-4 text-4xl font-bold">{repo.name}</h1>
-          <p className="text-text/80 mb-8 text-2xl">{repo.description}</p>
+          <h1 className="text-primary mb-3 text-3xl font-bold sm:mb-4 sm:text-4xl">{repo.name}</h1>
+          <p className="text-text/80 mb-6 text-lg sm:mb-8 sm:text-2xl">{repo.description}</p>
 
           {repoReadme && (
             <div className="markdown-content">
@@ -33,21 +33,21 @@ const ProjectPage = async ({
                   // eslint-disable-next-line
                   h1: ({ node, ...props }) => (
                     <h1
-                      className="text-primary mt-8 mb-4 text-3xl font-bold"
+                      className="text-primary mt-8 mb-4 text-2xl font-bold sm:text-3xl"
                       {...props}
                     />
                   ),
                   // eslint-disable-next-line
                   h2: ({ node, ...props }) => (
                     <h2
-                      className="text-primary mt-6 mb-3 text-2xl font-semibold"
+                      className="text-primary mt-6 mb-3 text-xl font-semibold sm:text-2xl"
                       {...props}
                     />
                   ),
                   // eslint-disable-next-line
                   h3: ({ node, ...props }) => (
                     <h3
-                      className="text-primary mt-4 mb-2 text-xl font-semibold"
+                      className="text-primary mt-4 mb-2 text-lg font-semibold sm:text-xl"
                       {...props}
                     />
                   ),
